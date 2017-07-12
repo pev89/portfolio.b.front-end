@@ -1,0 +1,156 @@
+//
+// Checkboxes
+// -----------------------------------
+
+
+
+.checkbox {
+  min-height:50px;
+
+  label{
+    display: block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+    line-height: 50px;
+
+    &::before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      right: 0;
+      border: 2px solid $input-border;
+      border-radius: $border-radius-base;
+      background-color: #fff;
+      @include transition(border 0.15s ease-in-out, color 0.15s ease-in-out);
+    }
+
+    &::after{
+      display: inline-block;
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      right: 0;
+      top: 0;
+      margin-left: -50px;
+      font-size: 11px;
+      color: $input-color;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"]{
+    opacity: 0;
+    z-index: 1;
+
+    &:checked + label::after{
+      content: '';
+      background-image: url('http://imgh.us/checkmark-big.svg');
+      background-repeat:no-repeat;
+      background-position:center center;
+    }
+
+    &:disabled + label{
+      opacity: 0.65;
+
+      &::before{
+        background-color: $input-bg-disabled;
+        cursor: not-allowed;
+      }
+    }
+
+  }
+
+  &.checkbox-circle label::before{
+    border-radius: 50%;
+  }
+
+  &.checkbox-inline{
+    margin-top: 0;
+  }
+}
+
+
+// Checkbox
+@include checkbox-variant('.checkbox', $input-border);
+@include checkbox-variant('.checkbox-primary', $brand-primary);
+@include checkbox-variant('.checkbox-secondary', $brand-secondary);
+
+
+
+//
+// Radios
+// --------------------------------------------------
+
+
+.radio{
+  padding-left: 20px;
+
+  label{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+
+    &::before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid $input-border;
+      border-radius: 50%;
+      background-color: #fff;
+      @include transition(border 0.15s ease-in-out);
+    }
+
+    &::after{
+      display: inline-block;
+      position: absolute;
+      content: " ";
+      width: 11px;
+      height: 11px;
+      left: 3px;
+      top: 3px;
+      margin-left: -20px;
+      border-radius: 50%;
+      background-color: $input-color;
+      transform: scale(0);
+
+      transition: transform .1s cubic-bezier(.8,-0.33,.2,1.33);
+      //curve - http://cubic-bezier.com/#.8,-0.33,.2,1.33
+    }
+  }
+
+  input[type="radio"]{
+    opacity: 0;
+    z-index: 1;
+
+
+    &:checked + label::after{
+      transform: scale(1);
+    }
+
+    &:disabled + label{
+      opacity: 0.65;
+
+      &::before{
+        cursor: not-allowed;
+      }
+    }
+
+  }
+
+  &.radio-inline{
+    margin-top: 0;
+  }
+}
+
+
+// Radiobox
+@include radio-variant('.radio-primary', $brand-primary);
+@include radio-variant('.radio-secondary', $brand-secondary);

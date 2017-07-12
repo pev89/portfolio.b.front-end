@@ -1,0 +1,87 @@
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $height-header;
+	width: 100%;
+	text-align: center;
+	z-index: $calendar;
+
+	@include gradient-horizontal(#F05F3E, #ED3269, 60%, 100%);
+
+	// Menu icon
+	a{
+		font-size: $font-size-large;
+		font-weight: 400;
+		color: #FFF;
+		line-height: $height-header;
+		letter-spacing: 0.7px;
+		
+		&.menu-icon{
+			position:absolute;
+			left: 20px;
+
+			.zmdi{
+				margin-right: 15px;
+			}
+		}
+	}
+
+
+	.switch-day-ul{
+		position:relative;
+		margin: auto;
+		max-width: 400px;
+		line-height: $height-header;
+
+		li{
+			display: inline-block;
+			margin: 0 2px;
+			font-size: $font-size-base;
+			font-weight: 400;
+			letter-spacing: 1px;
+			color: #FFF;
+			line-height: ($height-header - 16px);
+			height: ($height-header - 16px);
+			padding: 0 15px;
+			cursor: pointer;
+			background-color: rgba(0,0,0,.08);
+
+			@include rounded(3px);
+
+
+			&.button-today{
+				background-color: rgba(0,0,0,.08);
+				color: #FFF;
+
+				&.active{
+					background-color: #FFF;
+					color: #333;
+				}
+			}
+
+
+			&.button-calendar{
+				background-color: #FFF;
+				color: #333;
+
+				.zmdi{
+					color: $icon-base;
+					margin: 2px;
+				}
+
+				&:hover{
+					background-color: #FFF;
+					@include box-shadow-z(1);
+				}
+			}
+
+			&:hover{
+				background-color: rgba(255,255,255,0.2);
+			}
+		}
+	}
+}
+
+

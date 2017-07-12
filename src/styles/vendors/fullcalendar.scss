@@ -1,0 +1,457 @@
+$width-time-axis: 58px!important;
+$duration-slats-height: 1.5em!important;
+
+.parent_calendar {
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: $height-header;
+}
+
+.main,
+.scheduler,
+.scheduler_container {
+	height: 100%;
+}
+
+.fc-slats tr td {
+	position: relative;
+}
+
+.fc-slats .fc-axis {
+	background: #FFF;
+}
+
+.fc-time-grid .fc-slats .fc-minor td {
+	border-bottom: 0!important;
+	border-top-style: dashed;
+	border-color: #EAEAEA;
+}
+
+.fc-time-grid .fc-slats td.fc-axis {
+	border: 0;
+	width: $width-time-axis;
+}
+
+.fc-slats .fc-time span {
+	position: absolute;
+	right: 5px;
+	top: -10px;
+	color: #666!important;
+	font-size: $font-size-small;
+}
+
+.fc .fc-axis {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.fc td,
+.fc th {
+	border-width: 1;
+}
+
+.fc-resource-cell img {
+	float: left;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 32px;
+	height: 32px;
+	@include rounded(3px);
+}
+
+.fc-time-grid .fc-slats td {
+	height: $duration-slats-height;
+	vertical-align: top;
+}
+
+.fc-time-grid .fc-slats .fc-minor td {
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-list-heading td,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-row,
+.fc-unthemed tbody,
+.fc-unthemed td,
+.fc-unthemed th,
+.fc-unthemed thead {
+	border-color: #F0F0F0;
+}
+/* Event Container */
+.fc-time-grid .fc-bgevent,
+.fc-time-grid .fc-event {
+	margin-bottom: 5px;
+}
+
+.fc-event {
+	border: none;
+	background-color: $booking-status-noconfirmed;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
+	// fc-helper is used for select a booking
+	&.fc-helper {
+		margin-bottom: 0 !important;
+
+		.fc-content {
+			background-color: transparent;
+		}
+
+		.client,
+		.complete_button {
+			display: none;
+		}
+	}
+
+	.fc-content {
+		position: relative;
+		display: block;
+		height: 100%;
+		overflow: visible;
+	}
+}
+
+.fc-event .fc-time {
+	display: block;
+	font-size: $font-size-extra-small;
+	padding: 4px 6px;
+	color: rgba(255,255,255,0.6);
+	background-color: rgba(0,0,0,.15);
+	margin-bottom: 2px;
+	@include rounded(2px);
+}
+
+.fc-event .fc-title {
+	margin: 0 2px;
+	font-size: $font-size-small !important;
+	padding: 4px 6px;
+	font-weight: 500;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	&:before {
+		display: inline-block;
+		font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: '\f1bc';
+		margin-right: 8px;
+	}
+}
+
+.fc-event .fc-bg {
+	visibility: hidden;
+}
+
+.fc-event {
+	a.client,
+	span.client {
+		margin: 0 2px;
+		display: inline-block;
+		font-weight: 400;
+		padding: 4px 6px;
+		font-size: $font-size-small;
+		color: rgba(255,255,255,0.8);
+		@include rounded(2px);
+
+		&:before {
+			display: inline-block;
+			font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: '\f207';
+			margin-right: 8px;
+		}
+	}
+
+	a.client {
+		&:hover {
+			background-color: rgba(0,0,0,0.12);
+			color: white;
+		}
+
+		&:after {
+			display: inline-block;
+			font: normal normal normal 16px/1 'Material-Design-Iconic-Font';
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: '\f1a2';
+			margin-left: 8px;
+		}
+	}
+}
+
+.fc-event a.client {
+	font-size: 12px;
+	font-weight: 400;
+	padding: 4px 6px;
+	color: #FFF !important;
+	font-weight: bold;
+}
+
+.fc-event a.client:before {
+	display: inline-block;
+	font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f207';
+	margin-right: 8px;
+}
+
+.fc-event a.client {
+	font-size: 12px;
+	font-weight: 400;
+	padding: 4px 6px;
+	color: #FFF !important;
+	font-weight: bold;
+}
+
+.fc-event a.client:before {
+	display: inline-block;
+	font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f207';
+	margin-right: 8px;
+}
+
+.fc-event div.notes {
+	font-size: 12px;
+	font-weight: 400;
+	padding: 4px 6px;
+}
+
+.fc-event div.notes:before {
+	display: inline-block;
+	font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\f261';
+	margin-right: 8px;
+}
+
+.fc-view-container .fc-view {
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.fc-view-container .fc-view > table {
+	width: auto;
+}
+
+.fc-time-grid .fc-bg {
+	position: relative;
+}
+// .fc-time-grid .fc-bg td:nth-child(2n+1){
+// 	background: #F3F3F3;
+// }
+
+.fc-ltr .fc-time-grid .fc-event-container {
+	margin: 0 2.5%;
+}
+/* Indicator */
+.fc-time-grid .fc-now-indicator-line {
+	border-top-width: 2px;
+}
+
+.fc-now-indicator {
+	border-color: $time-indicator;
+}
+
+.fc-ltr .fc-time-grid .fc-now-indicator-arrow {
+	left: $width-time-axis;
+	width: 8px;
+	height: 8px;
+	border-radius: 10px;
+	background-color: $time-indicator;
+	border: 0;
+}
+
+.fc-time-grid .fc-now-indicator-arrow {
+	margin: -4px;
+}
+
+.fc {
+	.fc-head {
+		position: relative;
+		min-width: 100%;
+		background-color: #FFF;
+		z-index: 100;
+
+		th {
+			vertical-align: middle;
+			font-weight: 500;
+
+			.resource-header-revenue {
+				display: block;
+				font-size: $font-size-small;
+				font-weight: 300;
+				color: $gray-light;
+			}
+		}
+	}
+}
+
+.fc table {
+	min-width: 100%;
+	width: auto;
+}
+
+.fc-bg td,
+.fc-content-skeleton td,
+.fc-head th {
+	min-width: 250px;
+}
+
+.fc-bg td:first-child,
+.fc-content-skeleton td:first-child,
+.fc-head th:first-child {
+	min-width: $width-time-axis;
+}
+
+.fc-body {
+	position: relative;
+	margin-top: 120px;
+}
+
+body {
+	overflow: hidden;
+}
+
+#calendar,
+.fc-body,
+.fc-view,
+.fc-view > table,
+.fc-view-container {
+	position: relative;
+	height: 100%;
+}
+
+.fc-time-grid,
+.fc-time-grid-container {
+	height: 100%!important;
+}
+
+.fc-day-grid {
+	display: none!important;
+}
+
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-list-heading td,
+.fc-unthemed .fc-popover .fc-header {
+	display: none!important;
+}
+
+.fc-time-grid .fc-bgevent,
+.fc-time-grid .fc-event {
+	margin-bottom: 2px !important;
+}
+
+.fc-ltr .fc-time-grid .fc-event-container {
+	margin: 0 2px !important;
+}
+
+.fc .fc-head th {
+	position: relative;
+	font-size: $font-size-small;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+
+	& .resource-header-revenue {
+		font-size: $font-size-extra-small!important;
+	}
+}
+
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-list-heading td,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-row,
+.fc-unthemed tbody,
+.fc-unthemed td,
+.fc-unthemed th,
+.fc-unthemed thead {
+	border-color: #E3E3E3;
+}
+// Stylist
+
+.popover-stylist {
+	position: absolute;
+	top: 110%;
+	right: 0;
+	left: 0;
+	background-color: white;
+	color: rgba(0,0,0,0.8);
+	@include rounded(2px);
+	@include box-shadow-z(2);
+
+	span {
+		display: block;
+		padding: 8px 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		i {
+			position: absolute;
+			left: 10px;
+			color: $icon-base;
+			font-size: 16px;
+		}
+	}
+
+	&.hidden {
+		display: none;
+	}
+}
+// Complete
+
+a.complete_button {
+	color: #fff;
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include rounded(3px);
+	background-color: rgba(0,0,0,0.1);
+
+	&:hover {
+		color: #fff;
+		background-color: rgba(0,0,0,0.2);
+	}
+
+	i {
+		color: #fff;
+		font-size: 1.1em;
+	}
+}
+// Old days
+
+.old-day {
+	@include opacity(0.6);
+}

@@ -1,0 +1,170 @@
+@import "material_design_colors";
+@import "mixin";
+// Partials
+
+
+// Font
+$primary-font:          Poppins, sans-serif;
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-extra-small:   ceil(($font-size-base * 0.65)) !default; // ~10px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+
+// Color
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:         $mdc-red-500;
+$brand-secondary:       $mdc-blue-500;
+
+// Brand Gradient
+$brand-gradient-start:          #F05F3E;
+$brand-gradient-end:            #ED3269;
+$brand-gradient-start-point:    60%;
+$brand-gradient-end-point:      120%;
+
+//Icon colors
+$icon-light:            lighten($gray-base, 73%) !default;
+$icon-base:             lighten($gray-base, 46%) !default;
+$icon-dark:             lighten($gray-base, 13%) !default;
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        3px !default;
+$border-radius-large:       3px !default;
+$border-radius-small:       3px !default;
+
+
+// Button
+$btn-shadow-z:          0 22px 20px -15px rgba(0, 0, 0, 0.2);
+
+// Calender ====================
+
+// Calendar Status
+$success-color:         $mdc-green-500;
+$alert-color:           $mdc-red-500;
+$booked-color:          $mdc-blue-500;
+$block-color:           $mdc-grey-500;
+$toconfirm-color:       $mdc-yellow-300;
+
+// Other Calendar
+$time-indicator:		#00E5FF;
+
+// Input
+$input-border:          #DFDFDF !default;
+$input-color:           #4a4a4a !default;
+$border-radius-base:    3px !default;
+$input-bg-disabled:     #EAEAEA !default;
+$input-active-sidebar:  rgba($brand-secondary, 0.2);
+
+
+
+
+// z-index Sidebar
+
+$sidebar:               100000;
+$sidebar-container:     2000;
+$sidebar-bg:            1000;
+
+
+// z-index Calendar
+$datepicker:            110;
+$calendar:              100;
+
+
+// Header Calendar
+$height-header:                 50px;
+
+
+// Sidebar
+$bg-footer:             #FFF;
+$shadow-footer:         0 10px 38px rgba(0,0,0,0.30), 0 8px 12px rgba(0,0,0,0.22);
+$shadow-header:         0 -10px 38px rgba(0,0,0,0.30), 0 -8px 12px rgba(0,0,0,0.22);
+
+$height-siderbar-header: $height-header;
+$height-siderbar-footer: 82px;
+
+
+
+// Form
+
+$input-bg:                       #fff !default;
+$input-bg-disabled:              $gray-lighter !default;
+
+$input-color:                    $gray !default;
+$input-border:                   #ccc !default;
+
+$input-border-radius:            $border-radius-base !default;
+$input-border-radius-large:      $border-radius-large !default;
+$input-border-radius-small:      $border-radius-small !default;
+
+$input-border-focus:             #66afe9 !default;
+$input-color-placeholder:        #999 !default;
+
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+$form-group-margin-bottom:       15px !default;
+
+$legend-color:                   $gray-dark !default;
+$legend-border-color:            #e5e5e5 !default;
+
+$input-group-addon-bg:           $gray-lighter !default;
+$input-group-addon-border-color: $input-border !default;
+
+$cursor-disabled:                not-allowed !default;
+
+
+
+
+// list-group
+
+$list-group-border:              $input-border !default;
+$list-group-color:               $input-color;
+$list-group-hover:               #66afe9 !default;
+
+
+
+
+
+// Calendar Booking Status
+
+$booking-status-noconfirmed:    $mdc-deep-purple-300;

@@ -1,0 +1,169 @@
+// Layout
+
+.login-wrapper {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+	background: linear-gradient(222deg, #2b8ae3, #3fe1ef, #f1418b, #ffb891);
+	background-size: 1200% 1200%;
+
+	-webkit-animation: AnimationName 40s linear infinite;
+	-moz-animation: AnimationName 40s linear infinite;
+	animation: AnimationName 40s linear infinite;
+
+	@-webkit-keyframes AnimationName {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+	}
+	@-moz-keyframes AnimationName {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+	}
+	@keyframes AnimationName { 
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+	}
+	
+	& > *{
+		height: 100%;
+	}
+	
+	.bg-pic {
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		z-index: 1;
+
+		h1{
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			font-weight: 500;
+			color: #FFF;
+			max-width: 500px;
+			text-align: right;
+
+			@include opacity(0.8);
+
+			&:before{
+				position: absolute;
+				display: block;
+				content: '';
+				top: -20px;
+				right: 0;
+				height: 3px;
+				width: 40px;
+				background-color: #FFF;
+			}
+		}
+	}
+
+
+
+	.login-container {
+		position: relative;
+		width: 100%;
+	    max-width: 100%;
+	    min-width: 320px;
+	    display: block;
+	    float: left;
+	    background-color: #FFF;
+	    z-index: 2;
+
+		@include tablet{
+			max-width: 100%
+		}
+
+		@include desktop{
+			max-width: 500px
+		}
+
+	    .login{
+	    	padding: 10px 30px 0 10px;
+	    	margin: 10px 10px 0 10px;
+
+	    	@include tablet {
+		    	padding: 30px 30px 0 30px;
+		    	margin: 20px 20px 0 20px;
+	    	}
+	    	
+	    	@include desktop {
+		    	padding: 50px 50px 0 50px;
+		    	margin: 20px 20px 0 20px;
+	    	}
+
+	    	//logo
+	    	.logo{
+	    		position: relative;
+	    		width: 100px;
+	    		min-height: 50px;
+	    		background: url('../assets/images/logo.svg') no-repeat center;
+	    		background-size: 100%;
+	    	}
+
+	    	// Paragraph
+	    	p{
+	    		font-size: $font-size-large;
+	    		margin-bottom: 30px;
+	    		color: $gray-light;
+	    	}
+
+	    	.form-group{
+	    		& p{
+	    			font-size: $font-size-small;
+	    			color: $alert-color;
+	    		}
+	    	}
+
+
+	    	// List saloon
+	    	.list-group{
+
+	    		a{
+	    			position: relative;
+	    			display: block;
+	    			padding: 20px;
+	    			font-size: $font-size-large;
+	    			color: $list-group-color;
+					border: 1px solid $list-group-border;
+	    			text-decoration: none;
+
+	    			&:after{
+	    				font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+	    				content: '\f2fb';
+	    				display: block;
+	    				position: absolute;
+	    				right: 20px;
+	    				top: 0;
+	    				bottom: 0;
+	    				height: 20px;
+	    				margin: auto;
+	    				font-size: 24px;
+	    				color: $icon-base;
+	    			}
+
+					&:first-child{
+						border-radius: $border-radius-base $border-radius-base 0 0;
+					}
+	   				&:last-child{
+	   					margin-top: -1px;
+	   					border-top-color: transparent;
+						border-radius: 0 0 $border-radius-base $border-radius-base;
+	   				}
+
+	   				&:hover{
+	   					background-color: #FAFAFA;
+	   					border-color: $list-group-hover;
+	   				}
+	   				
+	    		}
+	    	}
+	    }
+	}
+}
+
+
+
